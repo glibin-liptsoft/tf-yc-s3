@@ -1,3 +1,9 @@
+resource "yandex_storage_bucket_policy" "this" {
+  count = var.policy.enabled || var.policy_console.enabled ? 1 : 0
+  bucket = var.bucket_name
+  policy = try(data.aws_iam_policy_document.this[0].json, null)
+}
+
 data "aws_iam_policy_document" "this" {
   count = var.policy.enabled || var.policy_console.enabled ? 1 : 0
 
