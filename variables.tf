@@ -87,6 +87,29 @@ variable "grant" {
   default = []
 }
 
+# variable "iam" {
+#   description = <<EOF
+#     (Optional) Object of lists with all base iam roles.
+
+#     Configuration attributes:
+#       admin          - (Optional) List users with role storage.admin
+#       configViewer   - (Optional) List users with role storage.configViewer
+#       configurer     - (Optional) List users with role storage.configurer
+#       editor         - (Optional) List users with role storage.editor
+#       uploader       - (Optional) List users with role storage.uploader
+#       viewer         - (Optional) List users with role storage.viewer
+#   EOF
+#   nullable    = true
+#   type = object({
+#     admin         = optional(list(string), [])
+#     configViewer  = optional(list(string), [])
+#     configurer    = optional(list(string), [])
+#     editor        = optional(list(string), [])
+#     uploader      = optional(list(string), [])
+#     viewer        = optional(list(string), [])
+#   })
+# }
+
 variable "policy" {
   description = <<EOF
     (Optional) Object storage policy.
